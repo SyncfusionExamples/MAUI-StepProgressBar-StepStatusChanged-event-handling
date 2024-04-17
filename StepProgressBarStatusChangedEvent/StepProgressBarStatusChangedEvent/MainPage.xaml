@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:stepProgressBar="clr-namespace:Syncfusion.Maui.ProgressBar;assembly=Syncfusion.Maui.ProgressBar"
+             xmlns:local="clr-namespace:StepProgressBarStatusChangedEvent"
+             x:Class="StepProgressBarStatusChangedEvent.MainPage">
+
+    <Grid>
+        <stepProgressBar:SfStepProgressBar x:Name="stepProgress"
+                                           VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           Orientation="Horizontal"
+                                           LabelSpacing="12"
+                                           ActiveStepIndex="2"
+                                           ProgressAnimationDuration="8000"
+                                           ItemsSource="{Binding StepProgressItem}">
+            <stepProgressBar:SfStepProgressBar.BindingContext>
+                <local:StepProgressBarViewModel />
+            </stepProgressBar:SfStepProgressBar.BindingContext>
+        </stepProgressBar:SfStepProgressBar>
+
+    </Grid>
+
+    <ContentPage.Behaviors>
+        <local:StepProgressBarBehaviour />
+    </ContentPage.Behaviors>
+</ContentPage>
